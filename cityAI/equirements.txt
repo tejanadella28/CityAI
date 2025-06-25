@@ -1,0 +1,10 @@
+streamlit
+flask
+transformers
+torch
+textblob
+nltk
+requests
+python-dotenv
+pandas
+plotly
