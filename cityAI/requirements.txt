@@ -6,3 +6,5 @@ textblob
 nltk
 requests
 python-dotenv
+pandas
+plotly
