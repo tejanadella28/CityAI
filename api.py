@@ -3,7 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 import os
 from dotenv import load_dotenv
-from analysis.sentiment import analyze_sentiment
+from textblob import TextBlob
 import json
 import requests
 from datetime import datetime
@@ -112,6 +112,19 @@ def call_groq_model(user_query):
     except requests.exceptions.RequestException as e:
         print(f"[Groq API Error]: {e}")
         return "⚠️ Groq API error: Unable to connect or fetch response. Please try again later."
+
+# ==================================================
+# ⚡️ Sentiment Analysis
+# ==================================================
+def analyze_sentiment(text):
+    blob = TextBlob(text)
+    polarity = blob.sentiment.polarity
+    if polarity > 0:
+        return "Positive"
+    elif polarity < 0:
+        return "Negative"
+    else:
+        return "Neutral"
 
 # ==================================================
 # ⚡️ Save Interaction
