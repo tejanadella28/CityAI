@@ -311,7 +311,7 @@ with st.sidebar:
 # ============================
 ROOT_DIR = Path(__file__).resolve().parent.parent
 FEEDBACK_FILE = ROOT_DIR / "data" / "feedback.json"
-API_CHAT_URL = "http://127.0.0.1:5000/chat"
+API_CHAT_URL = "https://cityai-wfn8.onrender.com/chat"
 
 # ============================
 # 💬 AI Assistant Interface
